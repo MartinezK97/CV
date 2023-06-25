@@ -1,0 +1,56 @@
+:root{
+    --msgC:rgb(5, 70, 145);
+    --msgB:rgb(161, 203, 252);
+
+    --errC:rgb(145, 5, 5);
+    --errB:rgb(252, 161, 161);
+
+    --sucC:rgb(8, 83, 1);
+    --sucB:rgb(169, 252, 161);
+
+    --danC:rgb(145, 73, 5);
+    --danB:rgb(252, 205, 161);
+}
+
+#console{
+    background:rgb(173, 173, 173);
+    position:fixed;
+    inset:auto 0 0 0;
+    height:200px;
+    overflow:scroll;
+}
+
+#console #consoleH{
+    background:#0005;
+    padding:5px;
+}
+
+#console p{
+    border:solid 1px #0003;
+    margin:2px;
+}
+
+#console p span{
+    background:#0002;
+}
+
+
+p.msg{
+    background:var(--msgB);
+    color:var(--msgC);
+}
+
+p.err{
+    background:var(--errB);
+    color:var(--errC);
+}
+
+p.suc{
+    background:var(--sucB);
+    color:var(--sucC);
+}
+
+p.dan{
+    background:var(--danB);
+    color:var(--danC);
+}

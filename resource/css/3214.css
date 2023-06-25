@@ -1,0 +1,46 @@
+
+@import "libs.css";
+@import "fontawesome.css";
+
+.hoja .header{
+    background:var(--headerColor);
+    height:35mm;
+    margin:10mm 15px 10px 15px;
+    position:relative;
+}
+
+.header .contenedor-foto{
+    border:solid 3mm #fff;
+    width: 50mm;
+    height:50mm;
+    position:absolute;
+    border-radius:100%;
+    background-color:#eee;
+    box-shadow:0 0 15px -5px #0005;
+    margin-top:-5mm;
+    margin-left:5mm;
+}
+
+.header .profession{
+    background: transparent;
+    position: absolute;
+    left: 60mm;
+    bottom: 0;
+    right: 14mm;
+    font-size: 29px;
+    height: 15mm;
+    padding-top:0;
+    /* border: solid 1px; */
+}
+
+.header .name{
+    background: transparent;
+    position: absolute;
+    left: 60mm;
+    top: 0;
+    right: 14mm;
+    font-size: 35px;
+    height: 20mm;
+    padding-bottom:0;
+    /* border: solid 1px; */
+}

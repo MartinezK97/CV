@@ -1,0 +1,83 @@
+{
+    "orders":{
+
+        "header":
+            {
+                "picture":"1",
+                "name":"2"
+            }
+    },
+    "styles":{
+        "primaryColor":"#92fdd4",
+        "headerColor":"#92fdd4",
+        "profColor":"#00000075",
+        "nameColor":"#00000095",
+        "foto_x":67,
+        "foto_y":17,
+        "foto_z":111,
+        "subtitleColor":"#707070",
+        "fontSizeHeader":40,
+        "fontSizeHeader2":25,
+        "borderWidthImg":5,
+        "titleColor":"#228961",
+        "borderRadiusBox":0,
+        "borderRadiusPicture":100
+    },
+    "name":"Jhon Thompson",
+    "profession":"Software Developer - Web Design",
+    "picture":"empty.png",
+    "email":"jhonthompson@email.com",
+    "mobile":"+1 234 590 654 321",
+    "location":"NY, United States",
+    "profile":"Descripcion",
+    "experiences":[
+        {
+            "date":"Enero de 2018 - Enero 2020",
+            "appointment":"Sr Developer en Google",
+            "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius doloribus, laboriosam impedit voluptates dolorem nam ut. Quod, eveniet. Fugit minima earum eos! Ullam earum, quam nisi amet iure numquam omnis!"
+        },
+        {
+            "date":"Agosto 2015 - Diciembre de 2017",
+            "appointment":" Cajera en supermercados SuperDescuento",
+            "description":"Lorem ipsum dolor sit amet quod, eveniet. Fugit minima earum eos! Ullam earum, quam nisi amet iure numquam omnis!"
+        }
+    ],
+    "formation":[
+        {
+            "date":"Marzo 2023 - Actualmente cursando",
+            "institution":"Educaci\u00f3n T\u00e9cnico Superior de Administraci\u00f3n",
+            "description":"Me encuentro actualmente cursando primer a\u00f1o de bachiller en UTU orientada a la administraci\u00f3n de empresas."
+        }
+    ],
+    "studys":[
+        {
+            "date":"Marzo 2023 - Actualmente cursando",
+            "institution":"Educaci\u00f3n T\u00e9cnico Superior de Administraci\u00f3n",
+            "description":"Me encuentro actualmente cursando la UTU orientada a la administraci\u00f3n de empresas."
+        }
+    ],
+    "information":[
+        {
+            "title":"2014 a 2022 Cajera",
+            "description":"Me desempe\u00f1aba como cajera en la cadena de supermercados Superdescuento S.A"
+        }
+    ],
+    "aditional":[
+        {
+            "title":"2014 a 2022 Cajera",
+            "description":"Me desmpe\u00f1aba como cajera en la cadena de supermercados Superdescuento S.A"
+        }
+    ],
+    "skills":
+        [
+            "PowePoint",
+            "Word",
+            "Excel"
+        ],
+    "habilidades":
+        [
+            "Proactiva",
+            "Puntual ",
+            "Responsable"
+        ]
+}

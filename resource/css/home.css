@@ -1,0 +1,12 @@
+
+#banner{
+    width:100vw;
+    /* height:calc(100vh - var(--headerH)); */
+    height:100vh;
+    display:block;
+    border:solid 1px blue;
+    background-image: url(../img/bg/body.gif);
+    background-attachment: fixed;
+    background-size: cover;
+}
+

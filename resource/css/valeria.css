@@ -1,0 +1,287 @@
+
+:root{
+    font-size: 14px;
+    --primary-color: #940567;
+    --hover-color: rgb(17, 80, 136);
+    
+    --secondary-color: rgb(15, 73, 124);
+    --tercer-color: #607d8b;
+
+    --secondary-icon:#505050;
+    
+}
+
+
+*{
+    /*border:solid 1px red;*/
+    box-sizing:border-box;
+    line-height: 1.5;
+    -webkit-print-color-adjust: exact;
+}
+
+
+
+input{
+    border:none;
+    font-size: 100%;
+    padding: 0;
+}
+
+
+.a4{
+    /* border:solid 1px red; */
+    width: 210mm;
+    min-width: 210mm;
+    max-width: 210mm;
+    height:278mm;
+    min-height:278mm;
+    max-height:278mm;
+    background:#fff;
+    /* margin:30px auto; */
+    margin:auto auto;
+    padding:20px 50px;
+}
+
+.a4 header{
+    display:grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    align-content: center;
+    align-self: center;
+    align-items: center;
+}
+
+header img{
+    display:inline-block;
+    width:calc( (210mm+40px)/6 );
+    height:calc( (210mm+40px)/6 );
+    grid-column: 1/2;
+    grid-row: 1/3;
+}
+
+header #nombres, header #apellidos{
+    background:transparent;
+}
+
+header h1{
+    display:inline-block;
+    grid-column:2/6;
+    align-items: bottom;
+    /* text-align:center; */
+    color:var(--primary-color);
+}
+
+header h3{
+    display:inline-block;
+    text-align:center;
+    grid-column:2/6;
+    color:var(--primary-color);
+}
+
+/******************
+    INFORMACION
+******************/
+
+.content-all{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:10px;
+}
+
+.markbook{
+    grid-column: 1/1;
+    /*border:solid 1px gray;**/
+}
+
+
+h1.name {
+    background:#94056750;
+    box-shadow:-50px 0 1px #94056750;
+    padding:10px 0;
+}
+
+
+.markbook h3{
+    margin-top:20px;
+    color:var(--primary-color);
+}
+
+.markbook .row{
+    /*display:grid;
+    grid-gap:5px;
+    align-content: center;*/
+    /*border:solid 1px red;*/
+    margin-top:10px;
+}
+.markbook .row i{
+    color:var(--secondary-icon);
+    width: 18px;
+    width: 18px;
+    font-size:14pt;
+    vertical-align: middle;
+    text-align:center;
+    display: inline-block;
+}
+
+.markbook .row input{
+    width:calc(100% - 18px);
+    margin:0;
+    display: inline-block;
+}
+
+.markbook .info-block{
+    margin: 0px;
+    width: 100%;
+    padding-left: 10px;
+    font-size: 100%;
+    resize: none;
+    outline:none;
+    border:none;
+    margin-top:5px;
+    overflow: hidden;
+}
+::-webkit-scrollbar{
+    display:none;
+}
+
+.picture-profile{
+    overflow:hidden;
+    border-radius:100%;
+    z-index:1;
+    border:solid 3px #fff;
+    position:relative;
+    width:150px;
+    height:150px;
+}
+
+.picture-profile :after{
+    content:"";
+    width:50px;
+    height:100%;
+    background:#94056750;
+}
+
+
+.picture-profile .img {
+    /* border:solid 1px green; */
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    display:block;
+    margin:0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.personal{
+    grid-column: 2/4 ;
+    /*border:solid 1px gray;*/
+    position:relative;
+}
+
+.timeline{
+    border:solid 1px red;
+    position: absolute;
+    height:7px;
+    transform-origin: 0 0;
+    transform: rotateX(90deg) ;
+    border: solid 1px #d1d1d1;
+    position: absolute;
+    height: 5px;
+    transform-origin: 0px 0px;
+    transform: rotateZ(90deg);
+    width: 120%;
+    left: 11px;
+    border-radius: 15px;
+    margin-top: 11px;
+}
+
+.personal h3{
+    background:#fff;
+    z-index: 2;
+    position:relative;
+    margin-top: 15px;
+    padding:10px 0;
+    color:var(--primary-color);
+}
+
+.r-block{
+    border:solid 1px transparent;
+}
+.r-block:hover{
+    border: dotted 1px #474747;
+}
+
+.personal .block{
+   
+    position:relative;
+    width:calc(100% - 25px);
+    margin:10px 0 auto auto;
+}
+
+
+
+.block .dot{
+    width: 12px;
+    height: 12px;
+    border-radius: 15px;
+    border: solid 1px #d1d1d1;
+    display: inline-block;
+    position: absolute;
+    transform: translateX(calc(-100% - 11px));
+    margin-top:3px;
+    background: #fff;
+}
+
+.block .title-dot{
+    color:var(--secondary-icon);
+    font-weight: 600;
+    width:100%;
+}
+
+.block .description{
+    color:var(--secondary-icon);
+    
+}
+
+
+.block textarea{
+    width:100%;
+}
+
+.personal .btn.secondary{
+   margin:0 0 auto auto;
+    display:block;
+    border:solid 1px transparent;
+}
+.personal .btn.secondary:hover{
+    border:solid 1px;
+}
+
+
+
+
+.grid-col-2{
+    display: grid;
+    grid-template-columns: minmax(max-content, 0fr) minmax(200px, 1fr);
+    grid-gap:5px;
+}
+
+.grid-col-2 span{
+    text-align: right;
+    margin-left:20px;
+}

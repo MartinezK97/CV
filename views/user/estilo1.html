@@ -1,0 +1,525 @@
+<html>
+<head>
+<meta charset='utf-8'/>
+
+                    <style>
+                        @import url('//raw.githubusercontent.com/necolas/normalize.css/master/normalize.css');
+
+@import url(root.css);
+
+
+body{
+    margin:0;
+    padding:0;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width:100vw;
+    height:100vh;
+    overflow:scroll;
+    background-color:var(--body-bg-color);
+}
+
+*{
+    box-sizing: border-box;
+    print-color-adjust:exact;
+    -webkit-print-color-adjust:exact;
+}
+
+a, button, input, textarea{
+    color:inherit;
+    text-decoration: none;
+    outline:none;
+    border:none;
+    font-family: inherit;
+    font-size: inherit;
+    resize:none;
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+
+.border{
+    border:solid 1px;
+}
+
+.pad0{ padding:0; }
+.pad5{ padding:5px; }
+.pad10{ padding:1px; }
+.pad15{ padding:15px; }
+.pad1015{ padding:10px 15px; }
+.pad1510{ padding:15px 10px; }
+
+.mar0{ margin:0; }
+.mar5{ margin:5px; }
+.mar10{ margin:1px; }
+.mar15{ margin:15px; }
+.mar1015{ margin:10px 15px; }
+.mar1510{ margin:15px 10px; }
+::-webkit-scrollbar{
+    display:none;
+}
+
+
+
+.full{
+    width:100vw;
+    height:100vh;
+    border:solid 1px red;
+    display:block;
+    background-attachment: fixed;
+    position:sticky;
+    top:0;
+    overflow:scroll;
+}
+
+.full .info{
+    background:#fff9;
+    position:relative;
+    margin-top:100vh;
+    margin-bottom:50vh;
+}
+
+.btn-secondary{
+    background:transparent;
+    color:var(--primary);
+    cursor:pointer;
+    border: solid 1px;
+    border-radius: 5px;
+    margin:0 0 auto auto;
+}
+
+
+#a4{
+    min-width:210mm;
+    width:210mm;
+    max-width:210mm;
+    min-height:var(--a4h);
+    height:var(--a4h);
+    max-height:var(--a4h);
+    background:#fff;
+    margin:0 auto;
+    position:relative;
+    
+}
+/* #a4:before {
+    position: absolute;
+    width: calc(210mm + 2cm);
+    height: calc(var(--a4h) + 2cm);
+    background: #fff;
+    left: -1cm;
+    top: 0cm;
+    z-index:-2;
+} */
+
+#a4:after {
+    /* content:""; */
+    position:absolute;
+    width: calc(210mm + 2cm);
+    height: calc(90px + 1cm);
+    top:0;
+    left:-1cm;
+    background:;
+    z-index:0;
+}
+
+.button-size-m{
+    padding:5px 10px;
+    border-radius:10px;
+    font-size:1rem;
+}
+
+.button-size-s{
+    padding:3px 7px;
+    border-radius:3px;
+    font-size:0.85rem;
+}
+
+.btn-secondary{
+    background:transparent;
+    color:var(--primary);
+    border:solid 1px;
+    
+}
+/* 
+i.fa{
+    font-family:'FontAwesome';
+    font-style:normal;
+    font-variant:normal;
+    font-weight:normal;
+    font-size:1rem;
+    color:red;
+    width:1.1rem;
+    font-size:14px;
+    line-height:1;
+    text-rendering:auto;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+} */
+
+.content-fixed-buttons{
+    position:fixed;
+    display:grid;
+    align-content: center;
+    grid-gap: 10px;
+    bottom:10px;
+    left:10px;
+}
+.content-fixed-buttons button{
+    border-radius:50px;
+    width:40px;
+    height:40px;
+    box-shadow:0 0 4px #000;
+    background:var(--primary);
+    color:#fff;
+    cursor:pointer;
+    border:solid 1px #fff;
+    transition:0.25ms;
+    font-size:2rem;
+    display:grid;
+    align-content: center;
+    text-align:center;
+    padding:5px;
+}
+.content-fixed-buttons button i.fa{
+    display: block;
+    margin:0 auto;
+}
+
+.content-fixed-buttons button:hover{
+    transform: scale(1.075);
+}
+.scann{
+    overflow:hidden;
+}
+.hoja.scann:before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:200px;
+    z-index: 2;
+    left: 0;
+    border-top: solid 2px #03e803;
+    background-image: linear-gradient(to bottom, #03e803b0, transparent);
+    animation: scannDoc 5s infinite ;
+}
+
+@keyframes scannDoc{
+    0%{
+        top:-200px;
+        transform:rotateX(180deg);
+     }
+     49.99%{
+        transform:rotateX(180deg);
+
+     }
+     50%{
+        top:100%;
+        
+    }50.0001%{
+        transform:rotateX(0deg);
+
+    }
+    99.99%{
+        transform:rotateX(0deg);
+
+    }
+    100%{
+        top:-200px;
+        transform:rotateX(180deg);
+
+    }
+
+}
+
+
+    #save_pdf:after{
+    content: "Descargar";
+    display: inline-block;
+    position: absolute;
+    background: var(--primary);
+    border: solid 1px #fff;
+    border-radius: 50px;
+    left: calc(100% + 10px);
+    padding: 0 15px;
+    visibility: hidden;
+    transform: translateX(-100%);
+    transition: 0.5s;
+    opacity:0;
+    z-index:-1;
+}
+
+#save_pdf:hover:after{
+    transform: translateX(0%);
+    visibility: visible;
+    opacity:1;
+}
+
+
+
+.accordion h2{
+    background:transparent;
+    border:none;
+    color:#fff;
+
+}
+
+.accordion > div{
+    background:transparent;
+    color:#fff;
+    border:none;
+    max-height: max-content;
+}
+
+.accordion .ui-accordion-content-active,
+    .accordion .ui-state-active{
+    background:#fff2;
+    
+}
+
+.accordion .margins p{
+    display:grid;
+    grid-template-columns:55% 20% 20%;
+    grid-gap:5px;
+
+}
+
+.accordion .margins p input,
+    .accordion .margins p select{
+    background:#fff1;
+    color:#fff;
+    border:none;
+}
+
+.accordion .margins p select option{
+    color:#333;
+}
+
+.header-adjust{
+    border:solid 1px red;
+}
+
+.header-align{
+    border:solid 1px #fff2;
+    margin:5px auto;
+    padding:5px 10px 15px 5px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.header-align:hover{
+    background:#fff2;
+    cursor:pointer;
+
+}
+
+.header-type-select{
+    background-color: #fff2;
+}
+
+    .header-type{
+    height: 20px;
+    border-radius: 3px;
+    width: 100px;
+    position: relative;
+    background: #87a4b3;
+    margin: 15px auto 5px;
+
+}
+
+.header-type-pic-left{
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #295870;
+    border-radius: 100%;
+    bottom: 0;
+    transform: translateY(50%);
+    left: 10px;
+    border: solid 2px #fff;
+    box-shadow: 0 0 5px #0005;
+}
+
+.header-type-pic-right{
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #295870;
+    border-radius: 100%;
+    bottom: 0;
+    transform: translateY(50%);
+    right: 10px;
+    border: solid 2px #fff;
+    box-shadow: 0 0 5px #0005;
+}
+
+.accordion h4 span{display:none;}
+.accordion h4 {
+    color:#fff;
+    background: transparent;
+    border:none;
+}
+
+.accordion h4 div a{
+    color:#fff;
+}
+
+.accordion h4 div a:hover{
+    color:var(--primary);
+}
+
+
+form .celda{
+    position: relative;
+    padding-top: calc(0.9rem + 10px);
+    display:inline-block;
+    min-width:100px;
+    max-width:200px;
+    text-align:left;
+}
+
+form .celda.w100{
+    width:100%;
+}
+
+form .celda span{
+    position: absolute;
+    font-size: 0.9rem;
+    top: 5px;
+    left: 10px;
+    margin: 0;
+    padding: 0;
+    color:#b9b9b9;
+}
+form .celda input{
+    background: transparent;
+    border-bottom: solid 1px #535353;
+    color:#fff;
+}
+
+form .celda textarea{
+    background: transparent;
+    border: solid 1px #535353;
+    color:#fff;
+    width:100%;
+    resize:auto;
+    display:block;
+    border-radius:5px;
+}
+
+form .celda:hover > span{
+    color:var(--primary);
+}
+
+form .celda:hover > input{
+   border-bottom:solid 1px #fff;
+}
+
+                         
+                        i{transform:scale(0.75);}
+                    </style>
+                    <link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'></head><body><section class='hoja' id='a4'>
+        <section class="cabecera">
+            <div class="contenedor-nombre" data-order="1">
+                <input type="text" id="nombre" class="" value="Valeria Martínez">
+                <input type="text" id="profesion" class="profesion" value="Estudiante de Administración">
+
+            </div>
+            <a href="#" class="contenedor-foto" data-order="2" style="background-image:url('http://www.localhost/cv/resource/img/users/avatar.png');"></a>
+            <svg id="visual" class="headerBG" viewBox="0 0 800 240" width="800" height="240" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="800" height="240" fill="#75d8ff" class="primaryColor"></rect><path d="M0 104L33.3 111.2C66.7 118.3 133.3 132.7 200 135.3C266.7 138 333.3 129 400 123.5C466.7 118 533.3 116 600 129.8C666.7 143.7 733.3 173.3 766.7 188.2L800 203L800 241L766.7 241C733.3 241 666.7 241 600 241C533.3 241 466.7 241 400 241C333.3 241 266.7 241 200 241C133.3 241 66.7 241 33.3 241L0 241Z" fill="#ffffff" stroke-linecap="round" stroke-linejoin="miter"></path></svg>        </section>
+        <section class="body">
+            <section class="left">
+                <section class="block" id="experiencias">
+                    <h3 class="title block-title"><i class="fa fa-briefcase"></i> Experiencias profesionales</h3>
+                    <div class="content-block" style="border: 1px dashed rgba(0, 0, 0, 0);">
+                        <span class="dot" style="background: rgb(255, 255, 255);"></span>
+                        <button title="Eliminar esta experiencia" class="trash trash-exp" rel="0" style="color: rgba(0, 0, 0, 0);"><i class="fa fa-trash"></i></button>
+                        <input class="appointment" type="text" rel="0" value="Cajera de supermercado">
+                        <input class="tt3 date" type="text" rel="0" value="Enero de 2018 - Junio de 2022">
+                        <textarea class="description" rel="0">Me desempeñaba como cajera en la cadena de supermercados Superdescuento S.A.</textarea>
+                    </div>
+                    <div class="content-block" style="border: 1px dashed rgba(0, 0, 0, 0);">
+                        <span class="dot" style="background: rgb(255, 255, 255);"></span>
+                        <button title="Eliminar esta experiencia" class="trash trash-exp" rel="1" style="color: rgba(0, 0, 0, 0);"><i class="fa fa-trash"></i></button>
+                        <input class="appointment" type="text" rel="1" value=" Cajera en supermercados SuperDescuento">
+                        <input class="tt3 date" type="text" rel="1" value="Agosto 2015 - Diciembre de 2017">
+                        <textarea class="description" rel="1">Me desempeñaba ocupando el cargo de cajera en Supermercados SuperDescuento. Poseo 8 años de experiencia en mi puesto, siendo capáz de poder resolver cualquier situación o imprevisto. Cabe destacar que también cuento con conocimientos en fiambrería y reposición. </textarea>
+                    </div>
+                    <button class="add btn-size-m btn-secondary openModal notShow" rel="newexperience" style="display: none;"><i class="fa fa-plus"></i> Agregar experiencia</button>
+                </section><!--fIN EXPERIENCIAS-->
+
+                <!-- Formacion Académica -->
+                <section class="block" id="experiencias">
+                    <h3 class="title block-title"><i class="fa fa-briefcase"></i> Formación académica</h3>
+                    <div class="content-block">
+                        <span class="dot"></span>
+                        <button title="Eliminar esta experiencia" class="trash trash-exp" rel="0"><i class="fa fa-trash"></i></button>
+                        <input class="appointment" type="text" rel="0" value="Cajera de supermercado">
+                        <input class="tt3 date" type="text" rel="0" value="Enero de 2018 - Junio de 2022">
+                        <textarea class="description" rel="0">Me deemeñaba como cajera en la cadena de supermercados Superdescuento S.A.</textarea>
+                    </div>
+                    <div class="content-block">
+                        <span class="dot"></span>
+                        <button title="Eliminar esta experiencia" class="trash trash-exp" rel="1"><i class="fa fa-trash"></i></button>
+                        <input class="appointment" type="text" rel="1" value=" Cajera en supermercados SuperDescuento">
+                        <input class="tt3 date" type="text" rel="1" value="Agosto 2015 - Diciembre de 2017">
+                        <textarea class="description" rel="1">Me desempeñaba ocupando el cargo de cajera en Supermercados SuperDescuento. Poseo 8 años de experiencia en mi puesto, siendo capáz de poder resolver cualquier situación o imprevisto. Cabe destacar que también cuento con conocimientos en fiambrería y reposición. </textarea>
+                    </div>
+                    <button class="add btn-size-m btn-secondary openModal notShow" rel="newexperience" style="display: none;"><i class="fa fa-plus"></i> Agregar experiencia</button>
+                </section><!--Fin Formacion Academica -->
+
+                <!-- Cursos y  -->
+                <section class="block" id="experiencias">
+                    <h3 class="title block-title"><i class="fa fa-briefcase"></i> Cursos y </h3>
+                    <div class="content-block">
+                        <span class="dot"></span>
+                        <button title="Eliminar esta experiencia" class="trash trash-exp" rel="0"><i class="fa fa-trash"></i></button>
+                        <input class="appointment" type="text" rel="0" value="Cajera de supermercado">
+                        <input class="tt3 date" type="text" rel="0" value="Enero de 2018 - Junio de 2022">
+                        <textarea class="description" rel="0">Me deemeñaba como cajera en la cadena de supermercados Superdescuento S.A.</textarea>
+                    </div>
+                    <div class="content-block">
+                        <span class="dot"></span>
+                        <button title="Eliminar esta experiencia" class="trash trash-exp" rel="1"><i class="fa fa-trash"></i></button>
+                        <input class="appointment" type="text" rel="1" value=" Cajera en supermercados SuperDescuento">
+                        <input class="tt3 date" type="text" rel="1" value="Agosto 2015 - Diciembre de 2017">
+                        <textarea class="description" rel="1">Me desempeñaba ocupando el cargo de cajera en Supermercados SuperDescuento. Poseo 8 años de experiencia en mi puesto, siendo capáz de poder resolver cualquier situación o imprevisto. Cabe destacar que también cuento con conocimientos en fiambrería y reposición. </textarea>
+                    </div>
+                    <button class="add btn-size-m btn-secondary openModal notShow" rel="newexperience" style="display: none;"><i class="fa fa-plus"></i> Agregar experiencia</button>
+                </section><!--Fin Formacion Academica -->
+
+            </section><!--Fin section left-->
+            <section class="division"></section><!--Fin section division-->
+            <section class="right">
+
+                <div id="contactos" class="block contactos">
+                    <!-- <p><i class="fa fa-envelope"></i> <input   type="text" id="email" placeholder="Direccion email" value="jhonDoe@email.com"></p> -->
+                    <p><i class="far fa-envelope"></i> <input type="text" id="email" placeholder="Direccion email" value="jhonDoe@email.com"></p>
+                    <p><i class="fab fa-whatsapp"></i> <input type="text" id="movil" placeholder="Numero de contacto" value="+598 91 234 567"></p>
+                    <p><i class="fa fa-map-marker-alt"></i> <input type="text" id="localidad" placeholder="Ciudad de recidencia" value="Montevideo, Uruguay"></p>
+                </div>
+
+                <div class="block  sobremi">
+                    <h3 class="title"><i class="fas fa-user"></i> Sobre mi</h3>
+                    <textarea id="sobremi" placeholder="Brebe descripcion de mi actualizad y personalidad">Descripción de mi </textarea>
+                </div>
+
+                <!-- <h4 class="title"><i class="fa fa-user"></i> Perfil</h4> -->
+            </section><!--Fin section right-->
+        </section><!--Fin section body-->
+
+    </section></body></html>

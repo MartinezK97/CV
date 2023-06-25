@@ -1,0 +1,67 @@
+#newpublication{
+    width:96%;
+    margin:0 auto;
+    display:grid;
+    grid-gap:10px;
+    grid-template-columns: auto 290px;
+}
+#newpublication .content-left{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:5px;
+}
+
+#newpublication .buttons{
+    grid-column: 1/3;
+    position: sticky;
+    bottom: 0;
+}
+
+form .celda{
+    padding:0;
+    position:relative;
+}
+
+
+form .celda span{
+    position:absolute;
+    top:0px;
+    left:10px;
+    font-size:14px;
+    z-index: 1;
+    color:var(--font-primary);
+}
+
+form .celda input,
+form .celda select,
+form .celda textarea
+{
+    width:100%;
+    padding:20px 0px 5px 0;
+    background:transparent;
+    border-bottom:var(--border);
+    text-indent:10px;
+    font-size: 16px;
+}
+
+form .celda select{
+    margin-top:-2px;
+}
+
+
+select option{
+    background:var(--box-bg);
+}
+
+
+    #newpublication .buttons button{
+    border-radius:5px;
+    padding:5px 15px;
+    font-size: 16px;
+}
+
+form button.submit{
+    background:var(--primary);
+    border:var(--border);
+
+}

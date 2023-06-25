@@ -1,0 +1,53 @@
+:root{
+    /* Color pallets */
+    --primary:#00b7ff;
+    --body-bg-color:#002432;
+    --box-bg-color:rgb(54, 51, 56);
+    /* Header vars */
+    --headerBG:url(../img/bg/green.jpg);
+    --headerH:40px;
+    --headerC:#fff;
+    
+    --graylight:#8f8f8f;
+    --gray:#7e7e7e;
+    --border:solid 1px var(--graylight);
+    --borderColor:solid 1px var(--primary);
+
+
+    --menuW:200px;
+
+
+    --green:#00820f;
+    --greenH:#00d719;
+    --submitC:#fff;
+    --submitHC:#000;
+
+    /* A4 */
+    --a4w:210mm;
+    --a4h:297mm;
+
+    /* A4 */
+  --a4W: 210mm;
+  --a4H: 297mm;
+
+  /* Letter */
+  --letterW: 216mm;
+  --letterH: 279mm;
+
+  /* Legal */
+  --legalW: 216mm;
+  --legalH: 356mm;
+
+
+
+    --trash:rgb(255, 118, 118);
+
+
+
+}
+
+*{
+    transition:all 0.25ms ease-in ; 
+}
+
+

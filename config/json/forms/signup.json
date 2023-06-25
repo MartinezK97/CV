@@ -1,0 +1,36 @@
+{
+   "inputs":{
+      "0":"email", 
+      "1":"password", 
+      "2":"password_repeat"
+   },
+
+   "email":{
+      "required":"true",
+      "type":"string",
+      "tipo":"email",
+      "minlength":5,
+      "maxlength":150,
+      "email":true
+   },
+
+   "password":{
+      "required":"true",
+      "type":"string",
+      "tipo":"contraseña",
+      "minlength":8,
+      "maxlength":150,
+      "password":true
+   },
+
+   "password_repeat":{
+      "required":"true",
+      "type":"string",
+      "tipo":"contraseña",
+      "minlength":8,
+      "maxlength":150,
+      "password_repeat":true
+   }
+   
+   
+}

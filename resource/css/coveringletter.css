@@ -1,0 +1,120 @@
+section#content-covering-letter{
+    background:#fff;
+    box-shadow:0 0 15px 5px #000, 0px 0px 1px 2000px #fff9;
+    position:fixed;
+    width:var(--a4w);
+    left:0;
+    right:0;
+    margin:0 auto;
+    max-height: calc(98vh - var(--headerH));
+    z-index:9;
+    
+}
+
+section#content-covering-letter .top-buttons,
+    section#content-covering-letter .bottom-buttons{
+    background-color: #0002;
+    padding:25px 20px;
+}
+
+section#content-covering-letter .top-buttons .title{
+    color:var(--primary);
+}
+
+section#content-covering-letter #editor{
+    padding:25px 20px;
+    outline:none;
+    font-size:1em;
+}
+
+section#content-covering-letter .top-buttons {
+    display:grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+section#content-covering-letter .top-buttons .titleModal{
+    grid-column:1/6;
+    color:var(--primary) !important;
+    font-size:1.4rem;
+}
+    section#content-covering-letter .top-buttons button,
+        section#content-covering-letter .top-buttons select{
+        background:#fff;
+    /* box-shadow:0 0 5px -1px #0005; */
+}
+
+section#content-covering-letter .bottom-buttons{
+    text-align:right;
+}
+
+
+section#content-covering-letter .container-buttons{
+    margin:0 auto;
+}
+
+
+
+section#content-covering-letter .container-buttons > button,
+    section#content-covering-letter .container-buttons > select{
+    border-radius:0;
+    box-shadow: 0;
+    border:var(--border);
+    border-left:none;
+    /* border-right:none; */
+    margin:0;
+}
+
+section#content-covering-letter .container-buttons  > :first-child{
+    border:var(--border) !important;
+    /* border */
+    border-radius:5px 0 0 5px;
+}
+
+section#content-covering-letter .container-buttons > :last-child{
+    border:var(--border) !important;
+    border-left:none !important;
+    border-radius:0 5px 5px 0;
+}
+
+
+#content-covering-letter .textStyle{
+    display: grid;
+    grid-template-columns: repeat(3, 40px);
+    grid-gap:0;
+}
+
+#content-covering-letter .textSize{
+    display: grid;
+    grid-template-columns: repeat(2, 40px);
+    grid-gap:0;
+}
+
+#content-covering-letter .textAlign{
+    display: grid;
+    grid-template-columns: repeat(4, 40px);
+    grid-gap:0;
+}
+
+#content-covering-letter .fontFamily{
+    display: grid;
+    grid-template-columns: max-content max-content;
+    /* grid-template-columns: 40px 70px; */
+    grid-gap:0;
+}
+
+
+section#content-covering-letter .bottom-buttons > :nth-child(1n){
+    border-radius:5px;
+    color:#fff;
+    padding:5px 15px;
+}
+
+section#content-covering-letter .bottom-buttons > :nth-child(1){
+    background-color: #0004;
+}
+
+section#content-covering-letter .bottom-buttons > :nth-child(2){
+    background-color: var(--primary);
+}
+section#content-covering-letter .bottom-buttons > :nth-child(3){
+    background-color: var(--primary);
+}

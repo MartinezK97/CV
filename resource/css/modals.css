@@ -1,0 +1,140 @@
+.modal{
+    position: fixed;
+    background: #fff;
+    left: 0;
+    right: 0;
+    max-width: max-content;
+    margin: auto auto;
+    top: 0;
+    bottom: 0;
+    max-height: max-content;
+    box-shadow: 0 0 10px 4000px #0005;
+    /* padding: 25px 16px; */
+    border-radius: 5px;
+    display:none;
+}
+.modal i.close{
+    position:absolute;
+    top:10px;
+    right:10px;
+    opacity:0.5;
+}
+
+.modal i.close:hover{
+    opacity:1;
+}
+
+.modal .submit{
+    padding:5px 10px;
+    border-radius:5px;
+    margin:10px 0 auto auto;
+    display:block;
+    cursor:pointer;
+    position:absolute;
+    bottom:20px;
+    left:20px;
+    background:var(--submit);
+}
+/* 
+#modalAddExperience{
+    display:grid;
+} */
+
+#modalAddExperience input,
+#modalAddExperience textarea{
+    border:solid 1px #aaa;
+    margin:5px;
+    padding:5px;
+}
+
+.modal button.submit{
+    background-color:var(--submit);
+    color:var(--submitC);
+    border:none;
+    outline:none;
+}
+
+.modal button.submit:hover{
+    background-color:var(--submitH);
+    color:var(--submitHC);
+}
+.modal .titleModal{
+    background: #0001;
+    padding: 15px 30px 15px 15px;
+    margin: 0;
+    border-bottom: solid 1px #0001;
+}
+
+.modal input, .modal textarea{
+    border:var(--border);
+    margin:0 auto;
+    display:block;
+    border-radius:5px;
+    width:90%;
+}
+
+/* ajustes de imagen */
+#modaladjustImage{
+    min-width:500px;
+    min-height:285px;
+    padding:10px;
+}
+
+#modaladjustImage .contenedor-foto{
+    margin-left:10px;
+}
+
+
+.adjust-image{
+    position: absolute;
+    background: #0001;
+    right: 20px;
+    top: 20px;
+    width:calc(100% - 270px);
+    bottom: 10px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.adjust-image .content-slider{
+    font-size:0.75rem;
+    display:grid;
+    grid-template-columns: max-content 100px;
+    grid-gap:10px;
+    margin:5px 10px;
+}
+
+.content-slider .bar{
+    border:solid 1px var(--primary);
+
+}
+
+.content-sliders-transform{
+    /* border:solid 1px green; */
+    width:250px;
+    height:max-content;
+    position:absolute;
+    top:190px;
+    left:0;
+}
+
+.content-sliders-transform .content-slider{
+    margin:10px;
+}
+.content-sliders-transform .content-slider.vertical {
+    position: absolute;
+    top: 0;
+    right:10px;
+    height: 106px;
+    /* border: solid 1px red; */
+    transform: translateY(calc(-190px));
+    height: 190px;
+    display: grid;
+    align-content: center;
+}
+.content-sliders-transform .content-slider.vertical > div{
+    height:170px;
+}
+
+
+

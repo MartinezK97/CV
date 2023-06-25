@@ -1,0 +1,73 @@
+body{
+    background: url(https://cdn.domestika.org/c_limit,dpr_1.0,f_auto,q_auto,w_820/v1489684970/content-items/001/898/226/render_producto-original.jpg);
+    background-size: cover;
+}
+
+#box{
+    /* border:solid 1px green; */
+    box-shadow:0 0 15px #0007;
+    border-radius: 10px;
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    width: max-content;
+    height: max-content;
+    margin:auto auto;
+    display:block;
+    padding:50px 25px;
+    background-color: #fff3;
+    backdrop-filter:blur(6px);
+}
+
+#box form p {
+    position:relative;
+    
+}
+
+#box form p input{
+    border:solid 1px var(--graylight);
+    border-radius:5px;
+    padding-top:15px;
+}
+
+#box form p input{
+    border:solid 1px var(--primary);
+}
+
+#box form p .placeholder{
+    color:var(--graylight);
+    z-index: 0;
+}
+
+
+
+
+    #box form p span.placeholder{
+    position: absolute;
+    color: var(--graylight);
+    height: 100%;
+    display: grid;
+    align-content: center;
+    transition: 0.25s;
+    left: 5px;
+    top:0;
+
+}
+
+#box form p.username:hover  p.username:before{
+    color:var(--primary);
+}
+
+
+#box h3{
+    color:var(--primary);
+}
+
+#box button{
+    background:var(--primary);
+    color:var(--headerC);
+    border-radius:50px;
+
+}

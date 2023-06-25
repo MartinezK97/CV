@@ -1,0 +1,60 @@
+{
+    "lang":"es",
+    "nombre":"[Nombre Apellido]",
+    "profesion":"[profesion]",
+    "foto":"empty.png",
+    "email":"miemail@email.com",
+    "movil":"+123456789",
+    "localidad":"[Ciudad], [País]",
+    "sobremi":"Agrega aquí una pequeño resumen de tu perfil",
+    "styles":{
+            "primaryColor":"#00b7ff",  "profColor":"#046288",
+            "foto_y":0,               "subtitleColor":"#046288",
+            "foto_z":0,               "foto_x":0,
+            "fontSizeHeader":40,        "fontSizeHeader2":25,
+            "borderWidthImg":5,         "titleColor":"#f467da",
+            "borderRadiusBox":0,     "borderRadiusPicture":100,
+            "headerColor":"#00b7ff",    "nameColor":"#fff",
+            "picturePosition":
+            {
+                "top":"0px",
+                "left":"0px"
+            }
+        },
+    "experiencias":[
+        {
+            "appointment":"[Cargo que desempeñaba],[Nombre de la Empresa]",
+            "date":"[Mes de ingreso + año] - [Mes de egreso + año]",
+            "description":"Añade un resumen de esa experiencia"
+        },
+        {
+            "appointment":"[Cargo que desempeñaba],[Nombre de la Empresa]",
+            "date":"[Mes de ingreso + año] - [Mes de egreso + año]",
+            "description":"Añade un resumen de esa experiencia"
+        }
+    ],
+    "formacion":[
+        {
+            "date":"[Mes de ingreso, Año] - [Mes de egreso, Año]",
+            "institution":"Nombre de la Institución",
+            "description":"Añade un resumen de esa experiencia"
+        }
+    ],
+    "estudios":[
+        {
+            "date":"[Mes de ingreso, Año] - [Mes de egreso, Año]",
+            "institution":"Nombre de la Institución",
+            "description":"Añade un resumen de esa experiencia"
+        }
+    ],
+    "competencias":[
+        "Competencia 1",
+        "Competencia 2",
+        "Competencia 3"
+    ],
+    "habilidades":[
+        "Habilidad 1",
+        "Habilidad 2",
+        "Habilidad 3"
+    ]
+}

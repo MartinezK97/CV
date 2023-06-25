@@ -1,0 +1,84 @@
+
+#leftMenu{
+    position:absolute;
+    width:calc((100vw - var(--maxSizeBlock))/2 - 10px );
+    /* top:calc(var(--headerH) + 5px); */
+    top:0;
+    bottom:5px;
+    /* padding:10px 5px; */
+    color:#fff;
+    /* border:solid 1px red; */
+    max-width:200px;
+    background-color: #fff1;
+}
+
+#leftMenu > button{
+    border-bottom:solid 1px #fff2;
+    background:transparent;
+    width: 100%;
+    text-align:left;
+    position:relative;
+}
+#leftMenu button.expand{
+    background:#fff2;
+    color:var(--primary);
+    border-radius:5px 5px 0 0;
+}
+
+#leftMenu > button > i.contract{
+    position:absolute;
+    margin-right:10px;
+    color:#fff2;
+}
+
+#leftMenu > section{
+    /* border:solid 1px #fff; */
+    padding:0px 5px;
+    transition:0.25s all ease-in-out;
+    background:#fff2;
+    height:0;
+    overflow: hidden;
+    opacity: 0;
+    font-size:0.85rem;
+    display:grid;
+}
+
+#leftMenu > section > :nth-child(1n):hover{
+    color:var(--primary);
+}
+
+    #leftMenu > section > :nth-child(1n) i{
+    margin-right:10px;
+}
+
+
+
+
+#leftMenu section.expand{
+    padding: 10px 5px;
+    opacity: 1;
+    transition:0.25s all ease-in-out;
+    height: max-content !important;
+    margin-bottom:5px;
+    border-radius:0 0 5px 5px;
+} 
+#leftMenu > button > i.contract{
+    position:absolute;
+    right:0px;
+    color:#fff2;
+}
+
+#leftMenu{
+    left:5px;
+    bottom:5px;
+}
+
+.hoja{
+    overflow:scroll;
+    margin-bottom:50px;
+}
+
+
+
+
+

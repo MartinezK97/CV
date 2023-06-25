@@ -1,0 +1,974 @@
+<html>
+<head>
+<meta charset='utf-8'/>
+
+                    <style>
+                        @import url('//raw.githubusercontent.com/necolas/normalize.css/master/normalize.css');
+
+@import url(root.css);
+
+
+body{
+    margin:0;
+    padding:0;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width:100vw;
+    height:100vh;
+    overflow:scroll;
+    background-color:var(--body-bg-color);
+}
+
+*{
+    box-sizing: border-box;
+    print-color-adjust:exact;
+    -webkit-print-color-adjust:exact;
+}
+
+a, button, input, textarea{
+    color:inherit;
+    text-decoration: none;
+    outline:none;
+    border:none;
+    font-family: inherit;
+    font-size: inherit;
+    resize:none;
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+
+.border{
+    border:solid 1px;
+}
+
+.pad0{ padding:0; }
+.pad5{ padding:5px; }
+.pad10{ padding:1px; }
+.pad15{ padding:15px; }
+.pad1015{ padding:10px 15px; }
+.pad1510{ padding:15px 10px; }
+
+.mar0{ margin:0; }
+.mar5{ margin:5px; }
+.mar10{ margin:1px; }
+.mar15{ margin:15px; }
+.mar1015{ margin:10px 15px; }
+.mar1510{ margin:15px 10px; }
+::-webkit-scrollbar{
+    display:none;
+}
+
+
+
+.full{
+    width:100vw;
+    height:100vh;
+    border:solid 1px red;
+    display:block;
+    background-attachment: fixed;
+    position:sticky;
+    top:0;
+    overflow:scroll;
+}
+
+.full .info{
+    background:#fff9;
+    position:relative;
+    margin-top:100vh;
+    margin-bottom:50vh;
+}
+
+.btn-secondary{
+    background:transparent;
+    color:var(--primary);
+    cursor:pointer;
+    border: solid 1px;
+    border-radius: 5px;
+    margin:0 0 auto auto;
+}
+
+
+#a4{
+    min-width:210mm;
+    width:210mm;
+    max-width:210mm;
+    min-height:var(--a4h);
+    height:var(--a4h);
+    max-height:var(--a4h);
+    background:#fff;
+    margin:0 auto;
+    position:relative;
+    
+}
+/* #a4:before {
+    position: absolute;
+    width: calc(210mm + 2cm);
+    height: calc(var(--a4h) + 2cm);
+    background: #fff;
+    left: -1cm;
+    top: 0cm;
+    z-index:-2;
+} */
+
+#a4:after {
+    /* content:""; */
+    position:absolute;
+    width: calc(210mm + 2cm);
+    height: calc(90px + 1cm);
+    top:0;
+    left:-1cm;
+    background:#ea9a9a;
+    z-index:0;
+}
+
+.button-size-m{
+    padding:5px 10px;
+    border-radius:10px;
+    font-size:1rem;
+}
+
+.button-size-s{
+    padding:3px 7px;
+    border-radius:3px;
+    font-size:0.85rem;
+}
+
+.btn-secondary{
+    background:transparent;
+    color:var(--primary);
+    border:solid 1px;
+    
+}
+/* 
+i.fa{
+    font-family:'FontAwesome';
+    font-style:normal;
+    font-variant:normal;
+    font-weight:normal;
+    font-size:1rem;
+    color:red;
+    width:1.1rem;
+    font-size:14px;
+    line-height:1;
+    text-rendering:auto;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+} */
+
+.content-fixed-buttons{
+    position:fixed;
+    display:grid;
+    align-content: center;
+    grid-gap: 10px;
+    bottom:10px;
+    left:10px;
+}
+.content-fixed-buttons button{
+    border-radius:50px;
+    width:40px;
+    height:40px;
+    box-shadow:0 0 4px #000;
+    background:var(--primary);
+    color:#fff;
+    cursor:pointer;
+    border:solid 1px #fff;
+    transition:0.25ms;
+    font-size:2rem;
+    display:grid;
+    align-content: center;
+    text-align:center;
+    padding:5px;
+}
+.content-fixed-buttons button i.fa{
+    display: block;
+    margin:0 auto;
+}
+
+.content-fixed-buttons button:hover{
+    transform: scale(1.075);
+}
+.scann{
+    overflow:hidden;
+}
+.hoja.scann:before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:200px;
+    z-index: 2;
+    left: 0;
+    border-top: solid 2px #03e803;
+    background-image: linear-gradient(to bottom, #03e803b0, transparent);
+    animation: scannDoc 5s infinite ;
+}
+
+@keyframes scannDoc{
+    0%{
+        top:-200px;
+        transform:rotateX(180deg);
+     }
+     49.99%{
+        transform:rotateX(180deg);
+
+     }
+     50%{
+        top:100%;
+        
+    }50.0001%{
+        transform:rotateX(0deg);
+
+    }
+    99.99%{
+        transform:rotateX(0deg);
+
+    }
+    100%{
+        top:-200px;
+        transform:rotateX(180deg);
+
+    }
+
+}
+
+
+    #save_pdf:after{
+    content: "Descargar";
+    display: inline-block;
+    position: absolute;
+    background: var(--primary);
+    border: solid 1px #fff;
+    border-radius: 50px;
+    left: calc(100% + 10px);
+    padding: 0 15px;
+    visibility: hidden;
+    transform: translateX(-100%);
+    transition: 0.5s;
+    opacity:0;
+    z-index:-1;
+}
+
+#save_pdf:hover:after{
+    transform: translateX(0%);
+    visibility: visible;
+    opacity:1;
+}
+
+
+
+.accordion h2{
+    background:transparent;
+    border:none;
+    color:#fff;
+
+}
+
+.accordion > div{
+    background:transparent;
+    color:#fff;
+    border:none;
+    max-height: max-content;
+}
+
+.accordion .ui-accordion-content-active,
+    .accordion .ui-state-active{
+    background:#fff2;
+    
+}
+
+.accordion .margins p{
+    display:grid;
+    grid-template-columns:55% 20% 20%;
+    grid-gap:5px;
+
+}
+
+.accordion .margins p input,
+    .accordion .margins p select{
+    background:#fff1;
+    color:#fff;
+    border:none;
+}
+
+.accordion .margins p select option{
+    color:#333;
+}
+
+.header-adjust{
+    border:solid 1px red;
+}
+
+.header-align{
+    border:solid 1px #fff2;
+    margin:5px auto;
+    padding:5px 10px 15px 5px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.header-align:hover{
+    background:#fff2;
+    cursor:pointer;
+
+}
+
+.header-type-select{
+    background-color: #fff2;
+}
+
+    .header-type{
+    height: 20px;
+    border-radius: 3px;
+    width: 100px;
+    position: relative;
+    background: #87a4b3;
+    margin: 15px auto 5px;
+
+}
+
+.header-type-pic-left{
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #295870;
+    border-radius: 100%;
+    bottom: 0;
+    transform: translateY(50%);
+    left: 10px;
+    border: solid 2px #fff;
+    box-shadow: 0 0 5px #0005;
+}
+
+.header-type-pic-right{
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #295870;
+    border-radius: 100%;
+    bottom: 0;
+    transform: translateY(50%);
+    right: 10px;
+    border: solid 2px #fff;
+    box-shadow: 0 0 5px #0005;
+}
+
+
+
+                         .hoja{
+    padding:0;
+ }
+ 
+ .hoja > *{
+   print-color-adjust: exact;
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -o-print-color-adjust: exact;
+} 
+
+@page { margin: 0px; }
+body { margin: 0px; }
+
+
+.borderRadiusBox{ border-radius:px;
+}
+.borderRadiusPicture{ border-radius:100px;}
+
+
+.hoja .cabecera{
+    height:200px;
+    display:block;
+    margin:0 auto 10px auto;
+    position:relative;
+    border-radius:px;
+    z-index:1;
+    /* width: 210mm; */
+    inset:0 0 0 0;
+    padding-top:25px;
+    position: absolute;
+}
+section.cabecera:before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 112px;
+    background: #ea9a9a;
+    z-index: -1;
+}
+
+.cabecera #contenedor-nombre{
+    display:inline-block;
+    /* width:calc(210mm - 300px); */
+    overflow:hidden;
+    margin: 0;
+    vertical-align: top;
+    position: absolute;
+    inset: 25px 25px 0 240px;
+    bottom:0;
+}
+.cabecera #contenedor-nombre #nombre{
+    /* color:#fff; */
+    background:transparent;
+    display:block;
+    width:90%;
+    align-self:center;
+    font-size:40px;
+    color:#0007;
+    font-weight:700;
+    /* border:solid 1px green; */
+    height:90px;
+    
+}
+.cabecera #contenedor-nombre #profesion{
+    /* position: absolute; */
+    font-size:25px;
+    width:100%;
+    font-weight:500;
+    color:#505050;
+    background:transparent;
+
+}
+.cabecera #contenedor-nombre input.profesion{
+    position:absolute;
+}
+
+.hoja .cabecera .contenedor-foto{
+    position:absolute;
+    inset:0 0 0 0;
+    border-color: #fff;
+    border-style: solid;
+    background-repeat: no-repeat;
+    width:160px;
+    height:160px;
+    box-shadow:2px 0 15px -5px #0007;
+    border-radius: 100px;
+    margin:25px 20px;
+    background-color:#eee;
+    display: inline-block;
+    grid-template-rows: min-content min-content;
+    /* align-content: center; */
+    background-repeat: no-repeat;
+    /* background-image: ; */
+    background-size: 111%;
+    background-position: 67% 17%;
+    color: var(--primary);
+    overflow:hidden;
+}
+
+.hoja .cabecera .contenedor-foto img{
+    width:100%;
+}
+
+.hoja .cabecera .contenedor-foto button{
+    transition: 0.25s;
+    cursor: pointer;
+    background: #fff3;
+    border-radius: 5px;
+    margin: 10px;
+    border: solid 1px;
+    box-shadow: 0 0 10px #000;
+    backdrop-filter: blur(7px);
+
+}
+
+.hoja .cabecera .contenedor-foto .add{
+    transform:translateY(-100px);
+}
+
+.hoja .cabecera .contenedor-foto .edit{
+    transform:translateY(100px);
+
+
+}
+
+.fa-map-marker{
+    -webkit-text-stroke: 1px var(--gray);
+    color:transparent;
+}
+.hoja .cabecera .contenedor-foto:hover .add,
+.hoja .cabecera .contenedor-foto:hover .edit{
+    transform:unset;
+}
+.hoja .cabecera .contenedor-foto:hover{
+    backdrop-filter: blur(6px);
+}
+
+
+
+.left-box, .right-box{
+    /* border:solid 1px #555; */
+    display:inline-block;
+    min-height:40px;margin-top:200px;
+    
+}
+
+.left-box{
+    width:calc(30% - 0.5cm);
+    margin-left:0.5cm;
+}
+/* 
+.left-box .block{
+} */
+
+
+
+
+
+.title{
+    color:#ea9a9a;
+    position:relative;
+}
+
+.right-box .title i.fa{
+    max-width:30px;
+    max-height:30px;
+    min-width:30px;
+    min-height:30px;
+    text-align:center;
+    display:inline-block;
+    vertical-align: middle;
+    align-content:center;
+    border:solid 1px #ea9a9a;
+    color:#ea9a9a;
+    border-radius:50%;
+    margin-left:-6px;
+    transform:scale(0.9);
+    position:relative;
+}
+
+
+.right-box     .title i.fa:before{
+    z-index: 1;
+    /* margin-bottom: -3px; */
+    position: absolute;
+    inset: 5px 0 0 0;
+    /* background: green; */
+    height: min-content;
+    width: min-content;
+    display: block;
+    margin: 0px auto;
+    }
+
+
+#sobremi textarea{
+    padding:0;
+    min-height:max-content;
+    display:block;
+    z-index:0;
+}
+
+
+
+
+#adjust{
+    font-size:12px;
+    position:fixed;
+    right:2px;
+    top:calc(var(--headerH) + 2px);
+    bottom:2px;
+    background:rgb(1, 31, 26);
+    color:#fff;
+    width:calc(((100vw - 210mm) / 2 ) - 1cm - 4px);
+    padding:5px;
+    overflow:scroll;
+}
+
+#adjust .line{
+    display:grid;
+    grid-template-columns: auto min-content;
+    grid-gap:2px;
+    align-content: center;
+}
+
+
+#adjust .line input{
+    align-self:center;
+    display:block;
+    max-width:50px;
+    margin:0 0 auto auto;
+    padding:0;
+    text-align:center;
+
+}
+
+#adjust input[type="color"]{
+
+    padding:0;
+    width:25px;
+    height:25px;
+    border-radius:100%;
+    overflow:hidden;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+	border: none;
+}
+
+#primaryColor{
+    background:#ea9a9a;
+}
+
+/* #adjust .content-slider{border:solid 1px #000;} */
+/* #adjust .content-slider span{color:red;} */
+#adjust .content-slider .bar{
+    width:90%;
+    margin:15px auto;
+    border:solid 1px var(--primary);
+
+}
+
+.content-slider .bar .slid{
+    text-align:center;
+    display:grid;
+    font-size:0.6rem;
+    align-content: center;
+    width:20px;
+    height:20px;
+    border-radius:50px;
+    margin-top:-3px;
+    outline:none;
+    border:solid 1px var(--primary);
+    background:#fff;
+    color:#000;
+}
+
+
+.contactos h3{
+    grid-column:1/3;
+}
+.contactos{
+    /* padding:5px; */
+    font-size:14px;
+}
+
+.contactos p i{
+    display: inline-block;
+    color: #505050;
+    text-align: right;
+    /* border: solid 1px green; */
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    height: min-content;
+    margin: auto 0;
+    width: 20px;
+    height: 20px;
+
+}
+    .contactos p input{
+    width:calc(100% - 25px);
+    z-index:0;
+    display:inline-block;
+    padding:0;
+}
+
+
+.contactos p {
+    margin:3px 0 0 0;
+    /* border:solid 1px red; */
+    position:relative;
+}
+
+ .contactos p i:before{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    max-height: min-content;
+    margin: auto;
+}
+
+.right-box{
+    width:69%;
+    vertical-align:top;
+    position:relative;
+}
+
+.right-box .block{
+    padding-left:15px;
+    /* border:solid 1px #5555; */
+    position:relative;
+} 
+.right-box .block .content-block{
+    position:relative;
+    margin-bottom:5px;
+    border:solid 1px transparent;
+}
+
+.right-box .block .content-block:hover{
+    border:dashed 1px var(--graylight);
+}
+hr.timeline{
+    width:5px;
+    border:solid 1px #ea9a9a;
+    position:absolute;
+    left:0;
+    top:20px;
+    bottom:40px;
+    display:block;
+    height:100%;
+    border-radius:10px;
+}
+.right-box .block hr.timeline.start{
+   height:calc(100% - 4em);
+   margin-top:4em;
+   border-bottom:none;
+}
+
+.right-box .block hr.timeline.medium{
+   height:calc(100% + 30px);
+   border-bottom:none;
+   border-top:none;
+   top:-30px;
+}
+.right-box .block textarea{
+    display:block;
+    width:100%;
+}
+
+
+.right-box .block .dot{
+    position: absolute;
+    top: 0.6em;
+    left: -20px;
+    display: block;
+    width: 13px;
+    height: 13px;
+    border: solid 1px #ea9a9a;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 0 5px -1px #0005;
+}
+
+
+    .right-box .block .tt3{
+    color:#707070;
+    width:100%;
+    background-color: #fff;
+    z-index:1;
+        font-weight:300;
+        font-size:0.9rem;
+    
+}
+
+
+.right-box .block-title{
+    margin-left:-22px;
+}
+
+.right-box .block-title i{
+   background: #fff;
+   position:relative,
+}
+
+
+
+
+.block.list{
+    /* border:solid 1px green; */
+    display:grid;
+    max-height: min-content;
+    grid-template-rows: min-content;
+    align-content: center;
+
+}
+
+.block.list p{
+    position:relative;
+    display:block;
+    margin:0;
+    width:100%;
+    
+}
+
+.block.list p .trash{
+    position: absolute;
+    right: 5px;
+    top: 0;
+    bottom: 0;
+    display: block;
+    height: max-content;
+    margin: auto;
+    color:#0000;
+}
+
+.block.list p:hover .trash{
+    color:var(--graylight);
+}
+
+.block.list p .trash:hover{
+    color:var(--trash);
+}
+
+
+
+
+.block.list p input{
+    /* padding:0; */
+    width:100%;
+    padding:5px 0;
+
+}
+
+.block button.add{
+    display:block;
+    margin:0 0 auto auto;
+    cursor:pointer;
+}
+
+
+.content-block input,
+.content-block textarea{
+    width: 100%;
+    height:auto;
+}
+.content-block .trash{
+    position:absolute;
+    background: transparent;
+    color:transparent;
+    cursor:pointer;
+    right:0;
+}
+
+.content-block:hover .trash{
+    color:var(--graylight);
+}
+
+.content-block:hover .dot{
+    background:#ea9a9a;
+}
+
+.trash:hover pattern{
+    background:red;
+}
+
+ 
+                        i{transform:scale(0.75);}
+                    </style>
+                    <link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'></head><body><section class='hoja' id='a4'>
+    
+        <section class="cabecera">
+                        <a href="#" class="contenedor-foto" data-order="2" style="background-image:url('resource/img/users/avatar.png');">
+                    <button class="add notShow" style="display: none;"><i class="fa fa-edit"></i> Cambiar</button>
+                    <button class="edit openModal notShow" rel="adjustImage" style="display: none;"><i class="fa fa-cog"></i> Ajustar</button>
+                </a>
+                            <div id="contenedor-nombre" data-order="1">
+                    <input readonly  type="text" id="nombre" class="" value="Valeria Martínez">
+                    <input readonly  type="text" id="profesion" class="profesion" value="Estudiante de Administración">
+                </div>
+            
+            <!-- <a href="#" class="contenedor-foto" data-order="2" style="background-image:url('resource/img/users/avatar.png');">
+                <button class="add notShow"><i class="fa fa-edit"></i> Cambiar</button>
+                <button class="edit openModal notShow" rel="adjustImage"><i class="fa fa-cog"></i> Ajustar</button>
+            </a> -->
+            <input readonly  type="file" id="file" style="display:none;">
+            <!-- <div id="contenedor-nombre" data-order="1">
+                <input readonly  type="text" id="nombre" class="" value="Valeria Martínez">
+                <input readonly  type="text" id="profesion" class="profesion" value="Estudiante de Administración">
+            </div> -->
+        </section>
+        <!-- SECCION IZQUIERDA -->
+            <section class="left-box">
+                <!-- Contactos -->
+                <div id="contactos" class="block contactos">
+                    <!-- <p><i class="fa fa-envelope"></i> <input readonly  type="text" id="email" placeholder="Direccion email" value="jhonDoe@email.com"></p> -->
+                    <p><i class="far fa-envelope"></i> <input readonly  type="text" id="email" placeholder="Direccion email" value="jhonDoe@email.com"></p>
+                    <p><i class="fab fa-whatsapp"></i> <input readonly  type="text" id="movil" placeholder="Numero de contacto" value="+598 91 234 567"></p>
+                    <p><i class="fa fa-map-marker-alt"></i> <input readonly  type="text" id="localidad" placeholder="Ciudad de recidencia" value="Montevideo, Uruguay"></p>
+                </div>
+                <!-- Sobre mi -->
+                <div class="block  sobremi">
+                    <h3 class="title"><i class="fas fa-user"></i> Sobre mi</h3>
+                    <textarea id="sobremi" placeholder="Brebe descripcion de mi actualizad y personalidad">Descripción de mi </textarea>
+                </div>
+                <div id="competencias" class="block list">
+                    <h3 class="title"><i class="fa fa-user"></i> Competencias</h3>
+                    <div class="content-data">
+
+                                                    <p><input readonly  type="text" rel="0" value="PowePoint"><i class="fa fa-times trash trash-comp"></i></p>
+                                                    <p><input readonly  type="text" rel="1" value="Word"><i class="fa fa-times trash trash-comp"></i></p>
+                                                    <p><input readonly  type="text" rel="2" value="Excel"><i class="fa fa-times trash trash-comp"></i></p>
+                                            </div>
+                        <button class="button-size-s btn-secondary add notShow" style="display: none;"><i class="fa fa-plus"></i></button>
+                </div>
+                <div id="habilidades" class="block list">
+                    <h3 class="title"><i class="fa fa-user"></i> Habilidades</h3>
+                                            <p><input readonly  type="text" rel="0" value="Proactiva"></p>
+                                            <p><input readonly  type="text" rel="1" value="Puntual "></p>
+                                            <p><input readonly  type="text" rel="2" value="Responsable"></p>
+                                    </div>
+            </section>
+        
+
+        <!-- SECCION DERECHA -->
+        <section class="right-box">
+            <hr class="timeline " style="height: 777.145px;">
+            <section class="block" id="experiencias">
+         
+                <h3 class="title block-title"><i class="fa fa-briefcase"></i> Experiencias</h3>
+                                    <div class="content-block">
+                        <span class="dot"></span>
+                        <button title="Eliminar esta experiencia" class="trash trash-exp" rel="0"><i class="fa fa-trash"></i></button>
+                        <input readonly  class="appointment" type="text" rel="0" value="Cajera de supermercado">
+                        <input readonly  class="tt3 date" type="text" rel="0" value="Enero de 2018 - Junio de 2022">
+                        <textarea class="description" rel="0">Me deemeñaba como cajera en la cadena de supermercados Superdescuento S.A.</textarea>
+                    </div>
+                                    <div class="content-block">
+                        <span class="dot"></span>
+                        <button title="Eliminar esta experiencia" class="trash trash-exp" rel="1"><i class="fa fa-trash"></i></button>
+                        <input readonly  class="appointment" type="text" rel="1" value=" Cajera en supermercados SuperDescuento">
+                        <input readonly  class="tt3 date" type="text" rel="1" value="Agosto 2015 - Diciembre de 2017">
+                        <textarea class="description" rel="1">Me desempeñaba ocupando el cargo de cajera en Supermercados SuperDescuento. Poseo 8 años de experiencia en mi puesto, siendo capáz de poder resolver cualquier situación o imprevisto. Cabe destacar que también cuento con conocimientos en fiambrería y reposición. </textarea>
+                    </div>
+                                <button class="add btn-size-m btn-secondary openModal notShow" rel="newexperience" style="display: none;"><i class="fa fa-plus"></i> Agregar experiencia</button>
+            </section>
+
+            <!-- FORMACION -->
+            <section class="block" id="formacion">
+                <h3 class="title block-title"><i class="fa fa-graduation-cap"></i> Formacion académica</h3>
+                                    <div class="content-block">
+                        <span class="dot"></span>
+                        <button title="Eliminar esta formacion" class="trash trash-for" rel="0"><i class="fa fa-trash"></i></button>
+                        <input readonly  class="institution" type="text" rel="0" value="Educación Técnico Superior de Administración">
+                        <input readonly  class="tt3 date" type="text" rel="0" value="Marzo 2023 - Actualmente cursando">
+                        <textarea class="description" rel="0">Me encuentro actualmente cursando la UTU orientada a la administración de empresas.</textarea>
+                    </div>
+                                <button class="add btn-size-m btn-secondary openModal notShow" rel="newTraining" style="display: none;"><i class="fa fa-plus"></i> Agregar formación</button>
+            </section>
+            <!-- FIN FORMACION -->
+
+            <!-- Estudios -->
+            <section class="block" id="estudios">
+                <h3 class="title block-title"><i class="fa fa-graduation-cap"></i> Cursos y actividades</h3>
+                                    <div class="content-block">
+                        <span class="dot"></span>
+                        <button title="Eliminar esta actividad" class="trash trash-est" rel="0"><i class="fa fa-trash"></i></button>
+                        <input readonly  class="institution" type="text" rel="0" value="Educación Técnico Superior de Administración">
+                        <input readonly  class="tt3 date" type="text" rel="0" value="Marzo 2023 - Actualmente cursando">
+                        <textarea class="description" rel="0">Me encuentro actualmente cursando la UTU orientada a la administración de empresas.</textarea>
+                    </div>
+                                <button class="add btn-size-m btn-secondary openModal notShow" rel="newstudy" style="display: none;"><i class="fa fa-plus"></i> Agregar formación</button>
+            </section>
+            <!-- FIN Estudios -->
+        </section>
+       
+
+    </section></body></html>

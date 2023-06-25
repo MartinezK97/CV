@@ -1,0 +1,105 @@
+@import "libs.css";
+/* @import url("/resource/css/fontawesome.min.css");
+
+@page { margin: 0px; }
+body { margin: 0px; } */
+
+/* :root{
+    --primaryColor:#75d8ff;
+} */
+
+
+.hoja .body{
+    display:grid;
+    grid-template-columns: 60mm 150mm;
+    position:relative;
+}
+
+.hoja input,
+.hoja textarea,
+.hoja select{
+    background: transparent;
+}
+
+.hoja .cabecera{
+    grid-column: 1/3;
+    position:absolute;
+    inset: 0 0 auto 0;
+    /* background:#f003; */
+    height:50mm;
+}
+
+.cabecera .contenedor-foto{
+    width: 60mm;
+    height: 60mm;
+    border: solid 10px #fff;
+    box-shadow:0 0 10px -5px #0005;
+    display: block;
+    position: absolute;
+    left: 25mm;
+    top: 3mm;
+    background: #eee;
+    border-radius: 50%;
+    z-index: 1;
+    overflow:hidden;
+}
+.cabecera .contenedor-foto img{
+    width:100%;
+}
+
+.contenedor-nombre{
+    position:absolute;
+    top:10mm;
+    right:0mm;
+    overflow: hidden;
+    width:120mm;
+    color:var(--titleColor);
+}
+
+.cabecera .contenedor-nombre .nombre{
+    font-size:var(--fontSizeHeader);
+    width:100%;
+}
+
+.cabecera .contenedor-nombre .profesion{
+    font-size:var(--fontSizeHeader2);
+    width:100%;
+
+}
+
+
+.hoja .left{
+    background: var(--headerColor);
+    position:absolute;
+    width:55mm;
+    height: var(--a4h);
+    padding:63mm 10px 0 10px;
+    font-size:0.9rem;
+}
+
+.left .contactos p {
+    padding:0;
+    margin:0;
+}
+    .left .contactos p input{
+    width:44mm;
+}
+.hoja .right{
+    /* background-color: #0005; */
+    position:absolute;
+    width:150mm;
+    height: var(--a4h);
+    padding-top:60mm;
+    right:0;
+}
+
+.right .block input,
+.right .block textarea{
+    display:block;
+    width:100%;
+}
+
+.block .tt3{
+    color:#555;
+    font-size:0.9rem;
+}

@@ -1,0 +1,1 @@
+<p>This site is: <b><?php echo constant('URL');?>views/user/projects/index </p>

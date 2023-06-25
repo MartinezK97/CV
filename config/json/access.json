@@ -1,0 +1,61 @@
+{
+    "sites":[
+        {
+            "site" : "", 
+            "access" : "public", 
+            "role" : ""
+        },
+        {
+            "site" : "test", 
+            "access" : "public", 
+            "role" : ""
+        },
+        {
+            "site" : "login", 
+            "access" : "public", 
+            "role" : ""
+        },
+        {
+            "site" : "signup", 
+            "access" : "public", 
+            "role" : ""
+        },
+        {
+            "site" : "user", 
+            "access" : "private", 
+            "role" : "user"
+        },
+        
+        {
+            "site" : "projects", 
+            "access" : "private", 
+            "role" : "user"
+        },
+        {
+            "site" : "admin", 
+            "access" : "private", 
+            "role" : "admin"
+        },
+        {
+            "site" : "dashboard", 
+            "access" : "private", 
+            "role" : "user"
+        },
+        {
+            "site" : "developer", 
+            "access" : "private", 
+            "role" : "developer"
+        },
+        {
+            "site" : "document", 
+            "access" : "private", 
+            "role" : "user"
+        }
+    ],
+
+    "default-sites":{
+        "user": "dashboard",
+        "admin": "admin",
+        "developer": "developer"
+    }
+}

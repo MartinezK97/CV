@@ -1,0 +1,162 @@
+@import "libs.css";
+@import "fontawesome.css";
+
+@page { margin: 0px; }
+body { margin: 0px; }
+:root{
+    --shadow:0 0 10px -5px #0005;
+}
+.hoja .card{
+    width:50mm;
+    height:80mm;
+    border-radius:5px;
+    box-shadow:var(--shadow);
+    padding:4mm;
+}
+
+
+.hoja .card .contenedor-foto{
+    width:46mm;
+    height: 46mm;
+    display:block;
+    overflow: hidden;
+    border-radius:100%;
+    margin:0 auto;
+}
+
+.hoja .card .contenedor-foto img{ width:100%;}
+
+.hoja .card .contactos{ 
+    /* border: solid 1px red; */
+    font-size:0.9rem;
+    padding:0;
+}
+
+.hoja .card .contactos input{
+    padding:0;
+    width:34mm;
+} 
+
+
+
+
+.hoja .left, .hoja .right{
+    position:absolute;
+    bottom:2mm;
+}
+
+.hoja .left{
+    width:50mm;
+    left:2mm;
+    top:2mm;
+
+}
+
+.hoja .left .block{
+    box-shadow: var(--shadow);
+    /* padding:2mm; */
+    margin-top:2mm;
+    position:relative;
+    padding:4mm 0;
+}
+
+.hoja .left .block input{
+    display:block;
+    width:100%;
+}
+.hoja .left .block .titleTag{
+    position:relative;
+    top: 0;
+    margin:0 -6px 0 auto;
+    box-shadow: var(--shadow);
+    padding: 2mm 5mm;
+    background:#fff;
+    overflow:visible;
+    width:90%;
+    color:var(--titleColor);
+    border-radius:5px 5px 0 5px;
+}
+
+.hoja .left .block .titleTag:after{
+    content:"";
+    position:absolute;
+    width:0;
+    height:0;
+    border-width:3px;
+    border-style: solid;
+    border-color: #0002 transparent transparent #0002;
+    display:block;
+    bottom:-6px;
+    right:0;
+}
+
+
+
+
+ .hoja .right{
+    width:150mm;
+    right:2mm;
+    top:2mm;
+    box-shadow:var(--shadow);
+
+ }
+
+ .hoja .right .titleTag{
+    color:var(--titleColor);
+    box-shadow:var(--shadow);
+    /* border:solid 1px red; */
+    border-radius: 5px 5px 5px 0;
+    max-width: max-content;
+    padding:1mm 6mm 1mm 3mm;
+    margin-left:-6px;
+    background:#fff;
+    overflow:visible;
+    position:relative;
+}
+
+.hoja .right .titleTag:after{
+    content:"";
+    position:absolute;
+    width:0;
+    height:0;
+    border-width:3px;
+    border-style: solid;
+    border-color: #0002 #0002 transparent transparent;
+    display:block;
+    bottom:-6px;
+    left:0;
+}
+
+.hoja .right .content-block {
+    position:relative;
+}
+.hoja .right .content-block input,
+.hoja .right .content-block textarea{
+    display:block;
+    width:100%;
+}
+
+.hoja .right .content-block .tt3{
+    color:#555;
+    font-size:0.9rem;
+}
+
+.hoja .right .content-block .trash{
+    color:transparent;
+    position:absolute;
+    top:0;
+    right:0;
+    background:transparent;
+    cursor:pointer;
+}
+
+.hoja .right .content-block:hover .trash{
+    color:var(--trash);
+}
+
+.hoja .right .content-block .trash:hover{
+    color:red;
+}
+
+
+

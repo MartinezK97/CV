@@ -1,0 +1,369 @@
+<html lang='es'><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar template</title>
+    <link href="color-picker.min.css" rel="stylesheet">
+<script src="color-picker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+<!-- FONTAWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="http://www.localhost/CV/resource/css/default.css">
+<link rel="stylesheet" href="http://www.localhost/CV/resource/css/header.css">
+<link rel="stylesheet" href="http://www.localhost/CV/resource/css/3210.css">
+<link rel="stylesheet" href="http://www.localhost/CV/resource/css/modals.css">
+<link rel="stylesheet" href="http://www.localhost/CV/resource/css/all.css">
+<link rel="stylesheet" href="http://www.localhost/CV/resource/css/edit.css">
+<link rel="stylesheet" href="http://www.localhost/CV/resource/css/coveringletter.css">
+<style id="stylesUserSettings">
+        :root{
+            /* Header color */
+            --headerColor: #f467da;
+            
+            /* Name color */
+            --nameColor: #9b418a;
+
+            /* prof  color */
+            --profColor: #9b418a;
+
+            --primaryColor: #ea9a9a;
+            --titleColor: #f467da;
+            --subtitleColor: #707070;
+            --borderRadiusBox: px;
+            --borderRadiusPicture: 100px;
+            --fontSizeHeader: 40px;
+            --fontSizeHeader2: 25px;
+            --borderWidthImg: 5px;
+            --stylesUserPictureProfile: url(../img/stylesUsers/);
+            --picturePositionTop: -6px;
+            --picturePositionLeft: 1px;
+            --stylesUserPicturePosition: var(--stylesUserPicturePositionX) var(--stylesUserPicturePositionY);
+            --stylesUserPictureSize: 111%;
+        }
+
+        /* input.headerColor{ fill:var(--headerColor) !important; } */
+        .profColor{ color:var(--profColor) !important; }
+        .nameColor{ color:var(--nameColor) !important; }
+        .titleColor{ color:var(--titleColor) !important; }
+
+
+        
+    </style>   <style>:root{--maxSizeBlock :var(--a4w);}</style>
+</head>
+<body>
+    <link rel="stylesheet" href="http://www.localhost/CV/resource/css/header.css">
+<section id="header">
+    <a href="http://www.localhost/CV/" class="home_link">
+        <img src="http://www.localhost/CV/resource/img/company/icon.png">
+    </a>
+    <section class="buttons">
+        <form action="http://www.localhost/CV/search/" method="post" id="searcher">
+            <input type="text" name="search" placeholder="Buscar...">
+            <button type="submit" class="submit"><i class="fa fa-search"></i></button>
+        </form>
+
+        <a href="http://www.localhost/CV/profile" class="acceder">
+            <img src="http://www.localhost/CV/resource/img/" alt="">
+        </a>
+        <a href="http://www.localhost/CV/acceder" class="">Registrarme</a>
+        <a href="http://www.localhost/CV/acceder" class="">Menu</a>
+    </section>
+</section>        <div id="content-all">
+            <section id="contenedor-hojas" class="ui-sortable">
+    <section class="hoja a4 ui-sortable-handle" id="a4">
+        <section class="cabecera">
+            <a href="#" class="contenedor-foto" id="contentPreviewImg">
+                                    <img src="http://www.localhost/CV/resource/img/users/100113.jpeg" class="ui-draggable ui-draggable-handle" style="position: relative;">
+                            </a>
+             <div id="contenedor-nombre" data-order="1">
+                <input type="text" id="nombre" class="" value="Valeria Martínez">
+                <input type="text" id="profesion" class="profesion" value="Estudiante de Administración">
+            </div>
+            <input type="file" id="faceID" style="display:none;">
+        </section>
+        <!-- SECCION IZQUIERDA -->
+        <section class="left-box">
+            
+            <!-- Contactos -->
+            <div id="contactos" class="block contactos">
+                <!-- <p><i class="fa fa-envelope"></i> <input   type="text" id="email" placeholder="Direccion email" value="jhonDoe@email.com"></p> -->
+                <p><i class="far fa-envelope"></i> <input type="text" id="email" placeholder="Direccion email" value="jhonDoe@email.com"></p>
+                <p><i class="fab fa-whatsapp"></i> <input type="text" id="movil" placeholder="Numero de contacto" value="+598 91 234 567"></p>
+                <p><i class="fa fa-map-marker-alt"></i> <input type="text" id="localidad" placeholder="Ciudad de recidencia" value="Montevideo, Uruguay"></p>
+            </div>
+
+            <!-- Sobre mi -->
+            <div class="block  sobremi">
+                <h3 class="title"><i class="fas fa-user"></i> Sobre mi</h3>
+                <textarea id="sobremi" placeholder="Brebe descripcion de mi actualizad y personalidad">Descripción de mi </textarea>
+            </div>
+
+            <!-- Competencias -->
+            <div id="competencias" class="block list">
+                <h3 class="title"><i class="fa fa-user"></i> Habilidades</h3>
+                <p><input type="text" rel="0" value="PowePoint"><i class="fa fa-times trash trash-comp"></i></p>
+                <p><input type="text" rel="1" value="Word"><i class="fa fa-times trash trash-comp"></i></p>
+                <p><input type="text" rel="2" value="Excel"><i class="fa fa-times trash trash-comp"></i></p>
+            </div>
+
+            <!-- Habilidades -->
+            <div id="habilidades" class="block list">
+                <h3 class="title"><i class="fa fa-user"></i> Destrezas</h3>
+                <p><input type="text" rel="0" value="Proactiva"></p>
+                <p><input type="text" rel="1" value="Puntual "></p>
+                <p><input type="text" rel="2" value="Responsable"></p>
+            </div>
+        </section><!--Fin Left box-->
+        
+
+        <!-- SECCION DERECHA -->
+        <section class="right-box">
+            <hr class="timeline " style="height: 777.145px;">
+            
+            <!-- Experiencias -->
+            <section class="block" id="experiencias">
+                <h3 class="title block-title"><i class="fa fa-briefcase"></i> Experiencia profesional</h3>
+                <div class="content-block">
+                    <span class="dot"></span>
+                    <button title="Eliminar esta experiencia" class="trash trash-exp" rel="0"><i class="fa fa-trash"></i></button>
+                    <input class="appointment" type="text" rel="0" value="Cajera de supermercado">
+                    <input class="tt3 date" type="text" rel="0" value="Enero de 2018 - Junio de 2022">
+                    <textarea class="description" rel="0">Me deemeñaba como cajera en la cadena de supermercados Superdescuento S.A.</textarea>
+                </div>
+                <div class="content-block">
+                    <span class="dot"></span>
+                    <button title="Eliminar esta experiencia" class="trash trash-exp" rel="1"><i class="fa fa-trash"></i></button>
+                    <input class="appointment" type="text" rel="1" value=" Cajera en supermercados SuperDescuento">
+                    <input class="tt3 date" type="text" rel="1" value="Agosto 2015 - Diciembre de 2017">
+                    <textarea class="description" rel="1">Me desempeñaba ocupando el cargo de cajera en Supermercados SuperDescuento. Poseo 8 años de experiencia en mi puesto, siendo capáz de poder resolver cualquier situación o imprevisto. Cabe destacar que también cuento con conocimientos en fiambrería y reposición. </textarea>
+                </div>
+            </section>
+
+            <!-- FORMACION -->
+            <section class="block" id="formacion">
+                <h3 class="title block-title"><i class="fa fa-graduation-cap"></i> Formación académica</h3>
+                <div class="content-block">
+                    <span class="dot"></span>
+                    <button title="Eliminar esta formacion" class="trash trash-for" rel="0"><i class="fa fa-trash"></i></button>
+                    <input class="institution" type="text" rel="0" value="Educación Técnico Superior de Administración">
+                    <input class="tt3 date" type="text" rel="0" value="Marzo 2023 - Actualmente cursando">
+                    <textarea class="description" rel="0">Me encuentro actualmente cursando la UTU orientada a la administración de empresas.</textarea>
+                </div>
+            </section><!-- FIN FORMACION -->
+
+            <!-- Estudios -->
+            <section class="block" id="estudios">
+                <h3 class="title block-title"><i class="fa fa-graduation-cap"></i> Cursos y capacitaciones</h3>
+                <div class="content-block">
+                    <span class="dot"></span>
+                    <button title="Eliminar esta actividad" class="trash trash-est" rel="0"><i class="fa fa-trash"></i></button>
+                    <input class="institution" type="text" rel="0" value="Educación Técnico Superior de Administración">
+                    <input class="tt3 date" type="text" rel="0" value="Marzo 2023 - Actualmente cursando">
+                    <textarea class="description" rel="0">Me encuentro actualmente cursando la UTU orientada a la administración de empresas.</textarea>
+                </div>
+            </section><!-- FIN Estudios -->
+        </section><!-- FIN right -->
+       
+
+    </section><!-- FIN a4 -->
+    </section><!-- FIN content-hojas -->
+<link rel="stylesheet" href="http://www.localhost/CV/resource/css/leftMenu.css">
+<section id="leftMenu">
+    <button class="acc expand" rel="document-options"><i class="fa fa-file-alt"></i> Documento <i class="fa contract fa-times"></i></button>
+    <section class="slid document-options expand">
+        <a href="#print"><i class="fa fa-print"></i>Imprimir</a>
+        <a href="#export" id="exportPDF"><i class="fa fa-file-pdf"></i>Exportar a PDF</a>
+        <a href="#export"><i class="fa fa-file-download"></i> Descargar</a>
+    </section>
+    <button class="acc" rel="external-files"><i class="fa fa-link"></i> Archivos externos <i class="fa fa-sort-down contract"></i></button>
+    <section class="slid external-files">
+        <a href="#coveringletter" id="openCoveringLetter"><i class="fa fa-file-upload"></i>Carta de presentación</a>
+        <input type="file" accept="application/pdf" id="presentacion" style="display:none">
+        
+        <a href="#" class="addCertificated"><i class="fa fa-file-upload"></i> Adjuntar escolaridad</a>
+        <input type="file" accept="image/*, application/pdf" id="escolaridad" style="display:none">
+        
+        <a href="#diploma" id="addDiploma"><i class="fa fa-file-alt"></i>Adjuntar diplomas</a>
+        <input type="file" accept="image/*, application/pdf" id="inputFileDiplomas" name="diplomas[]" style="display:none">
+    </section> 
+    <button class="acc" rel="lang"><i class="fa fa-language"></i> Lenguaje <i class="fa fa-sort-down contract"></i></button>
+    <section class="slid lang">    
+                        <a href="#" rel="es"> Español <input type="checkbox" checked=""></a>
+                            <a href="#" rel="en"> English <input type="checkbox"></a>
+                    <!-- <a href="#spanish" > Español <input type="checkbox"  ></a> -->
+        <!-- <a href="#inglish"> Ingles <input type="checkbox"></a> -->
+    </section>
+    <button class="acc"><i class="fa fa-copy"></i> Páginas <i class="fa fa-sort-down contract"></i></button>
+
+</section><link rel="stylesheet" href="http://www.localhost/CV/resource/css/rightMenu.css">
+<section id="rightMenu">
+    <button class="acc" rel="paper"><i class="far fa-file"></i> Tamaño de papel <i class="fa fa-sort-down contract"></i></button>
+    <section class="slid paper">
+        <button rel="a4" class="paper selected">A4</button>
+        <button rel="letter" class="paper papeA4">Letter</button>
+        <button rel="legal" class="paper papeA4">Legal</button>
+
+    </section>
+    <!-- Colors -->
+    <button class="acc" rel="colors"><i class="fa fa-palette"></i> Colores <i class="fa fa-sort-down contract"></i></button>
+    <section class="slid colors ">
+        <p><span>Cabecera</span><input type="color" value="#f467da" id="headerColor"></p>
+        <p><span>Nombre</span><input type="color" value="#9b418a" id="nameColor"></p>
+        <p><span>Profesion</span><input type="color" value="#9b418a" id="profColor"></p>
+        <p><span>Títulos</span><input type="color" value="#f467da" id="titleColor"></p>
+        <p><span>Subtítulos</span><input type="color" value="#707070" id="subtitleColor"></p>
+    </section>
+    
+    <button class="acc img-set" rel="image-setting"><i class="fas fa-user-circle"></i> Imagen <i class="fa fa-sort-down contract"></i></button>
+    <section class="slid image-setting ">
+        <ul class="ui-helper-reset">
+            <li id="event-start" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-play"></span>"start" invoked <span class="count">0</span>x</li>
+            <li id="event-drag" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-arrow-4"></span>"drag" invoked <span class="count">0</span>x</li>
+            <li id="event-stop" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-stop"></span>"stop" invoked <span class="count">0</span>x</li>
+        </ul>    
+    
+    
+    <p><i class="fa fa-arrows-alt"></i> Zoom</p>
+        <p><i class="fa fa-arrows-alt-h"></i> Horizontal</p>
+        <p><i class="fa fa-arrows-alt-v"></i>  Vertical</p>
+        <p>Voltear verticalmente</p>
+        <p>Voltear horizontalmente</p>
+    </section>
+
+
+    <button class="acc"><i class="sombra"></i> Sombras <i class="fa fa-sort-down contract"></i></button>
+    <button class="acc"> <i class="fa fa-font"></i> Fuente <i class="fa fa-sort-down contract"></i></button>
+
+    <button class="acc" rel="margins"><i class="fa fa-ruler-combined"></i> Márgenes <i class="fa fa-sort-down contract"></i></button>
+    <section class="slid margins">
+            <p>superior 
+                <input rel="top" id="document_margin_top" type="number" value="0">
+                <select id="document_margin_top_unit">
+                    <option value="mm" selected="">mm</option>
+                    <option value="cm">cm</option>
+                </select>
+            </p>
+            <p>inferior 
+                <input rel="bottom" id="document_margin_bottom" type="number" value="0">
+                <select id="document_margin_bottom_unit">
+                    <option value="mm" selected="">mm</option>
+                    <option value="cm">cm</option>
+                </select>
+            </p>
+            <p>derecho 
+                <input rel="right" id="document_margin_right" type="number" value="0">
+                <select id="document_margin_right_unit">
+                    <option value="mm" selected="">mm</option>
+                    <option value="cm">cm</option>
+                </select>
+            </p>
+            <p>izquierdo 
+                <input rel="left" id="document_margin_left" type="number" value="0">
+                <select id="document_margin_left_unit">
+                    <option value="mm" selected="">mm</option>
+                    <option value="cm">cm</option>
+                </select>
+            </p>
+    </section>
+    <button rel="header" class="acc"><i class="cabezera"></i> Cabecera <i class="fa fa-sort-down contract"></i></button>
+    <section class="slid header">
+        <p>
+            <span>Color de fondo</span>
+            <input type="color" name="" id="" value="#eee">
+            <input type="checkbox" name="" id="">
+        </p>
+        <p>Color titulo</p>
+        <p>Color subtitulo</p>
+
+    </section>
+</section>
+
+<section id="content-covering-letter" style="display:none;">
+    <section class="top-buttons">
+        <h4 class="titleModal">Redacta una carta de presentación</h4>
+        <!-- //Buttons -->
+        <div class="container-buttons fontFamily">
+        <button>Fuente</button>
+        <button>    
+            <select name="" id="">
+                <option selected="">Arial</option>
+            </select>
+        </button>    
+        
+        </div>
+        <div class="container-buttons textStyle">
+            <button id="boldButton"><strong>N</strong></button>
+            <button id="italicButton"><em>C</em></button>
+            <button id="underlineButton"><u>S</u></button>
+        </div>
+        <div class="container-buttons textSize">
+            <button id="increaseFontSizeButton">A+</button>
+            <button id="decreaseFontSizeButton">A-</button>
+        </div>
+
+        <div class="container-buttons textAlign">
+            <button id="textAlign-left"><i class="fa fa-align-left"></i></button>
+            <button id="textAlign-left"><i class="fa fa-align-center"></i></button>
+            <button id="textAlign-left"><i class="fa fa-align-right"></i></button>
+            <button id="textAlign-left"><i class="fa fa-align-justify"></i></button>
+        </div>
+        <!-- <div class="container-buttons fontColor"> -->
+            <input type="color" name="" id="inputFontColor">
+        <!-- </div> -->
+    </section>
+    
+    <div id="editor" contenteditable="" style="height:300px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quam, repudiandae consectetur eveniet aperiam perspiciatis non adipisci id alias tenetur delectus perferendis, dicta, unde doloribus minima repellat autem quos iste! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi iure a quo, consequuntur nostrum adipisci quidem architecto perferendis dignissimos provident aperiam quis vel iusto, vitae cumque magnam tempora dolore! Quos? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus corporis nisi minima, voluptas ea veritatis veniam eveniet consectetur quaerat tenetur reprehenderit repellendus nesciunt architecto? In aliquam quisquam ex nulla voluptatum.</div>
+        
+    <section class="bottom-buttons">
+        <a href="#coveringLetterSave" class="closeModal"> Cancelar</a>
+        <a href="#coveringLetterSave" class="saveCoveringLetter"> Guardar</a>
+        <a href="#coveringLetterSaveAndAdjunt" class="saveCoveringLetterAndAdjunt"> Guardar y adjuntar</a>
+    </section>
+</section>        </div>
+    <div class="modal" id="newExperienceModal">
+    <h4 class="titleModal">Agregar nueva experiencia laboral <i class="fa fa-times close"></i></h4>
+    <div class="data">
+        <p><input id="newExperienceAppointment" type="text" placeholder="Cargo en Empresa SA."></p>
+    </div>
+    <div class="data">
+        <p><input id="newExperienceDate" type="text" placeholder="Mes/Año - Mes/Año"></p>
+    </div>
+    <div class="data">
+        <p><textarea id="newExperienceDescription" type="text" placeholder="Cargo en Empresa SA."></textarea></p>
+    </div>
+    <button class="submit"><i class="fa fa-check"></i> Guardar</button>
+</div><div class="modal" id="newCourseModal">
+    <h4 class="titleModal">Agregar una nueva capacitación</h4>
+    <div class="data">
+        <p><input id="newCourseTitle" type="text" placeholder="Titulo de capacitacion"></p>
+    </div>
+    <div class="data">
+        <p><input id="newCourseDate" type="text" placeholder="Mes/Año - Mes/Año"></p>
+    </div>
+    <div class="data">
+        <p><textarea id="newCourseDescription" type="text" placeholder="Describe como se ha desarrollado el curso y que has aprendido"></textarea></p>
+    </div>
+    <button class="submit">Guardar</button>
+</div><script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
+
+<!-- Jquery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- JQuery UI -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<!-- AXIOS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.5/axios.min.js" integrity="sha512-nnNHpffPSgINrsR8ZAIgFUIMexORL5tPwsfktOTxVYSv+AUAILuFYWES8IHl+hhIhpFGlKvWFiz9ZEusrPcSBQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link href="color-picker.min.css" rel="stylesheet">
+<script src="color-picker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+<script src="http://www.localhost/CV/resource/js/config.js"></script>
+<script src="http://www.localhost/CV/resource/js/printAreaJQuery.js"></script>
+<script src="http://www.localhost/CV/resource/js/modals.js"></script>
+<script src="http://www.localhost/CV/resource/js/menu.js"></script>
+<script type="module" src="http://www.localhost/CV/resource/js/autosave.js"></script>
+<!-- <script src="http://www.localhost/CV/resource/js/autosave.js" type="module"></script> -->
+
+<p class="success"><i class="fa fa-check"></i> undefined</p></body></html>

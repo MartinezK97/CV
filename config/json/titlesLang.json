@@ -1,0 +1,26 @@
+{
+    "langs":{
+        "0":"es",
+        "1":"en"
+    },
+    "lang":{
+        "es":"Español",
+        "en":"English"
+    },
+    "en":{
+        "exp":"Professional experience",
+        "for":"Academic Training",
+        "cur":"Courses and Capacitations",
+        "pro":"Profile",
+        "com":"Skills",
+        "des":"Dexteritys"
+    },
+    "es":{
+        "exp":"Experiencia profesional",
+        "for":"Formación académica",
+        "cur":"Cursos y capacitaciones",
+        "pro":"Perfil",
+        "com":"Habilidades",
+        "des":"Destrezas"
+    }
+}

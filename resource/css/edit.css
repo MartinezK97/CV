@@ -1,0 +1,16 @@
+#content-all{
+    display: grid;
+    max-width: calc(var(--a4w) + 420px);
+    position: fixed;
+    /* border: solid 1px yellow; */
+    margin: 0px auto 5px;
+    left:0;
+    right:0;
+    bottom:0;
+    top:calc(var(--headerH) + 5px);
+    /* overflow: scroll; */
+}
+
+#contenedor-hojas{
+    overflow:scroll;
+}
